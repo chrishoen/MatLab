@@ -1,8 +1,8 @@
 function sample_plot_1
 
-x = load('C:\MyLib\Data\SampleTest.csv');
+x = load('C:\MyLib\Data\');
 plot(x(:,2),x(:,3))
-axis([0 inf -4.0 4.0])
+axis([0 inf -2.0 2.0])
 h=zoom;
 set(h,'Motion','horizontal','Enable','on');
 

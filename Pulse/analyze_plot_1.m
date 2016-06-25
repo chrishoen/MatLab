@@ -1,6 +1,6 @@
 function analyze_plot_1
 
-x = load('C:\MyLib\Data\Analyze12.csv');
+x = load('C:\Alpha\Data\Analyze12.csv');
 
 ax1 = subplot(2,1,1); % top subplot
 ax2 = subplot(2,1,2); % bottom subplot

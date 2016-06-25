@@ -1,7 +1,7 @@
 function detected_plot_1
 
-x1 = load('C:\MyLib\Data\PulseSample41.csv');
-x2 = load('C:\MyLib\Data\DetectedPdw41.csv');
+x1 = load('C:\Alpha\Data\PulseSample41.csv');
+x2 = load('C:\Alpha\Data\DetectedPdw41.csv');
 
 ax1 = subplot(2,1,1); % top subplot
 ax2 = subplot(2,1,2); % bottom subplot

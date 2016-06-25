@@ -1,6 +1,6 @@
-function filter_plot_2
+function filter_plot_AlphaOne
 
-x = load('C:\MyLib\Data\FilterAlphaOne.csv');
+x = load('C:\Alpha\Data\FilterAlphaOne.csv');
 
 ax1 = subplot(2,1,1); % top subplot
 ax2 = subplot(2,1,2); % bottom subplot

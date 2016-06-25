@@ -13,7 +13,7 @@ plot(ax2,x(:,2),x(:,4))
 axis(ax2,[0 inf -2.0 2.0])
 
 plot(ax3,x(:,2),x(:,5))
-axis(ax3,[0 inf -2.0 2.0])
+axis(ax3,[0 inf -0.5 0.5])
 
 h=zoom;
 set(h,'Motion','horizontal','Enable','on');

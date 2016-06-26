@@ -1,6 +1,6 @@
 function filter_plot_AlphaTwo
 
-x = load('C:\Alpha\Data\FilterAlphaTwo.csv');
+x = load('C:\Alpha\Data\FilterAlphaThree.csv');
 
 ax1 = subplot(3,1,1); % top    subplot X
 ax2 = subplot(3,1,2); % middle subplot EX

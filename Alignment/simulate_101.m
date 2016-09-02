@@ -12,17 +12,21 @@ PhiA    = deg2rad(  -2.0);
 ThetaB  = deg2rad(   1.0);
 PhiB    = deg2rad(   2.0);
 
+Alpha0  = deg2rad(  -2.0);
+Beta0   = deg2rad(   2.0);
+Theta0  = deg2rad(   1.0);
+
+N0=[0;0;1];
 R01=rotateX(ThetaP)*rotateY(PhiP);
 R0a3=R01*rotateX(ThetaA)*rotateY(PhiA);
 R0b3=R01*rotateX(ThetaB)*rotateY(PhiB);
-
-N0=[0;0;1];
 
 NH=R01.'*N0;
 NA=R0a3.'*N0;
 NB=R0b3.'*N0;
 
-runSimulate();
+V=equationFunction(Alpha0,Beta0,Theta0);
+disp(V)
 return
 %END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -39,13 +43,10 @@ R=[cos(t) -sin(t) 0; sin(t) cos(t) 0; 0 0 1];
 
 
 %BEGIN>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-function runSimulate(t)
-global NH
+function V=equationFunction(Alpha,Beta,Theta)
 global NA
 global NB
 
-NH
-NA
-NB
+V=rotateY(Alpha)*NA - rotateX(Theta)*rotateY(Beta)*NB;
 
 %END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

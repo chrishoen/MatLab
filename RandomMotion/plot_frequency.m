@@ -22,26 +22,26 @@ function MyFrequencyAnalysisPlot(F,Ymag,Yangle,NFFT,ttlMag,ttlPhase)
 
 figure
 subplot(2,1,1)
-plot(F(1:NFFT/2)/1e3,20*log10(Ymag(1:NFFT/2)));
+plot(F(1:NFFT/2)/1e0,20*log10(Ymag(1:NFFT/2)));
 if nargin > 4 && ~isempty(ttlMag)
-  tstr = {'Magnitude response of the audio signal',ttlMag};
+  tstr = {'Frequency Magnitude',ttlMag};
 else
-  tstr = {'Magnitude response of the audio signal'};
+  tstr = {'Frequency Magnitude'};
 end
 title(tstr)
-xlabel('Frequency in kHz')
+xlabel('Frequency in Hz')
 ylabel('dB')
 grid on;
 axis tight 
 subplot(2,1,2)
-plot(F(1:NFFT/2)/1e3,Yangle(1:NFFT/2));
+plot(F(1:NFFT/2)/1e0,Yangle(1:NFFT/2));
 if nargin > 5
-  tstr = {'Phase response of the audio signal',ttlPhase};
+  tstr = {'Frequency Phase',ttlPhase};
 else  
-  tstr = {'Phase response of the audio signal'};
+  tstr = {'Frequency Phase'};
 end
 title(tstr)
-xlabel('Frequency in kHz')
-ylabel('radians')
+xlabel('Frequency in Hz')
+ylabel('Radians')
 grid on;
 axis tight

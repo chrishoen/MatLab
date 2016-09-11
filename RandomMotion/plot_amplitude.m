@@ -1,4 +1,4 @@
-function filter_plot_RandomMotion1
+function plot_amplitude
 
 x = load('C:\Alpha\Data\RandomMotion.csv');
 plot(x(:,2),x(:,3))

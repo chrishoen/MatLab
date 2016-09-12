@@ -1,5 +1,5 @@
 %*******************************************************************
-function bandpass_002
+function lowpass_001
 filter_1;
 return
 
@@ -8,9 +8,8 @@ function filter_1
 disp('BEGIN***********************************')
 
 % Specify filter
-Fc1 = 0.25;
-Fc2 = 1.00;
-d = fdesign.bandpass('N,F3dB1,F3dB2',4,Fc1,Fc2,100);
+Fc1 = 1.00;
+d = fdesign.lowpass('N,F3db',4,Fc1,100);
 normalizefreq(d,false,100);
 
 % Calculate filter

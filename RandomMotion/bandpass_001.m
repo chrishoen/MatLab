@@ -8,8 +8,10 @@ function filter_1
 disp('BEGIN***********************************')
 
 % Specify filter
-d = fdesign.bandpass('N,F3dB1,F3dB2',4,3.95,4.05,4096);
-normalizefreq(d,false,4096);
+Fc1 = 0.25;
+Fc2 = 1.00;
+d = fdesign.bandpass('N,F3dB1,F3dB2',4,Fc1,Fc2,100);
+normalizefreq(d,false,100);
 
 % Calculate filter
 Hd = design(d,...
@@ -27,7 +29,7 @@ h = fvtool(Hd,...
     'Analysis','freq', ...
     'MagnitudeDisplay','Magnitude', ...
     'FrequencyRange','Specify freq. vector', ...
-    'FrequencyVector',linspace(2,6,8192),'Fs',4096);
+    'FrequencyVector',linspace(0,4,200),'Fs',100);
       
 get(h)
 disp('END*************************************')

@@ -1,6 +1,6 @@
 function plot_frequency
 
-MyData = load('C:\Alpha\Data\RandomMotion.csv')
+MyData = load('C:\Alpha\Data\RandomMotion.csv');
 X = MyData(:,3);
 
 Fs = 100;
@@ -11,7 +11,7 @@ F = ((0:1/NFFT:1-1/NFFT)*Fs);
 magnitudeW = abs(W);
 phaseW = unwrap(angle(W));
 
-MyFrequencyAnalysisPlot(F,magnitudeW,phaseW,NFFT)
+MyFrequencyAnalysisPlot(F,magnitudeW,phaseW,NFFT);
 
 return
 
@@ -24,9 +24,9 @@ figure
 subplot(2,1,1)
 plot(F(1:NFFT/2)/1e0,20*log10(Ymag(1:NFFT/2)));
 if nargin > 4 && ~isempty(ttlMag)
-  tstr = {'Frequency Magnitude',ttlMag};
+  tstr = {'Magnitude Response',ttlMag};
 else
-  tstr = {'Frequency Magnitude'};
+  tstr = {'Magnitude Response'};
 end
 title(tstr)
 xlabel('Frequency in Hz')
@@ -36,9 +36,9 @@ axis tight
 subplot(2,1,2)
 plot(F(1:NFFT/2)/1e0,Yangle(1:NFFT/2));
 if nargin > 5
-  tstr = {'Frequency Phase',ttlPhase};
+  tstr = {'Phase Response',ttlPhase};
 else  
-  tstr = {'Frequency Phase'};
+  tstr = {'Phase Response'};
 end
 title(tstr)
 xlabel('Frequency in Hz')

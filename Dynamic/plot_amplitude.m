@@ -1,7 +1,7 @@
-function plot_Dynamic1
+function plot_amplitude
 
 x = load('C:\Alpha\Data\Dynamic.csv');
-plot(x(:,2),x(:,4))
+plot(x(:,2),x(:,3))
 axis([0 inf -10.0 10.0])
 h=zoom;
 set(h,'Motion','horizontal','Enable','on');

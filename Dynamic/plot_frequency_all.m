@@ -1,4 +1,4 @@
-function plot_frequency
+function plot_frequency_all
 
 MyData = load('C:\Alpha\Data\Dynamic.csv');
 X = MyData(:,3);

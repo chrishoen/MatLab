@@ -22,7 +22,7 @@ function MyFrequencyAnalysisPlot(F,Ymag,Yangle,NFFT,ttlMag,ttlPhase)
 
 figure
 subplot(2,1,1)
-plot(F(1:NFFT/20)/1e0,20*log10(Ymag(1:NFFT/20)));
+plot(F(1:NFFT/50)/1e0,20*log10(Ymag(1:NFFT/50)));
 if nargin > 4 && ~isempty(ttlMag)
   tstr = {'Magnitude Response',ttlMag};
 else
@@ -34,7 +34,7 @@ ylabel('dB')
 grid on;
 axis tight 
 subplot(2,1,2)
-plot(F(1:NFFT/20)/1e0,Yangle(1:NFFT/20));
+plot(F(1:NFFT/50)/1e0,Yangle(1:NFFT/50));
 if nargin > 5
   tstr = {'Phase Response',ttlPhase};
 else  

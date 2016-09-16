@@ -2,7 +2,7 @@ function plot_amplitude_c34
 
 x = load('C:\Alpha\Data\Dynamic.csv');
 
-figure
+%figure
 ax1 = subplot(2,1,1); % top subplot
 plot(ax1,x(:,2),x(:,3))
 axis(ax1,[0 inf -10.0 10.0])

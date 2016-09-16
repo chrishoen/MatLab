@@ -9,11 +9,11 @@ T = 0:Ts:Duration;
 A = degtorad(10.0);
 Phase = degtorad(45);
 X = A*sin(2.0*pi*Fp*T) + Phase;
-Y = cos(X);
+Y = sin(X);
 
 EX_X = mean(X);
 EX_Y = mean(Y);
-SS_Y = cos(EX_X);
+SS_Y = sin(EX_X);
 
 fprintf('RESULTS******************************************\n')
 fprintf('RESULTS %d\n',NumSamples)

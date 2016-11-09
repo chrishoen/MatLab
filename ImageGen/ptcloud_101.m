@@ -24,6 +24,8 @@ xlabel(player.Axes,'X (m)');
 ylabel(player.Axes,'Y (m)');
 zlabel(player.Axes,'Z (m)');
 
+ptCloud
+
 while isOpen(player)
     ptCloud = pctransform(ptCloud,tform);
     view(player,ptCloud);

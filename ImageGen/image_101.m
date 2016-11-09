@@ -1,19 +1,23 @@
 %BEGIN>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 function image_101
 
-NRows = 2000;
-NCols = 2000;
+NRows = 1000;
 
 X = checkerboard(NRows/8)>0.5;
 
 
-TForm = affine2d([1 0 0; .5 1 0; 0 0 1]);
-Alpha = 45;
+
+theta = 10;
+
+TForm = affine2d([cosd(theta) -sind(theta) 0; sind(theta) cosd(theta) 0; 0 0 1]);
+TForm = affine2d([1 0 0; 0 1 0; 0 0 1]);
+
 Y = imwarp(X,TForm);
 
 
 imshow(Y);
 
+display(TForm)
 
 return
 %END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

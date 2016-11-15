@@ -3,34 +3,67 @@
 %***********************************************************************
 function image_201
 
+fprintf('************************************************************************************')
+
 NRows = 1000;
 X = checkerboard(NRows/8)>0.5;
 
 
 %***********************************************************************
-R = rotateXYZDinv(0,0,45);
-T = [1,2,3];
+R = rotateXYZDinv(0,0,0);
+T = [0;0;8];
 
-A = [R; T]
-B = [0;0;0;1]
+A = [R; T'];
+B = [0;0;0;1];
 C = [A,B]
-TForm = affine3d(C);
+TFormAffine2d = affine3d(C);
 
 %***********************************************************************
 
-XA = [11 12 13;21 22 23;31 32 33;41 42 43]
+XA = [11 12 13;21 22 23;31 32 33;41 42 43];
+
+XA = [-1 -1 4;
+      -1  1 4;
+       1 -1 4;
+       1  1 4];
+  
 XAX = XA(:, 1);
 XAY = XA(:, 2);
 XAZ = XA(:, 3);
 
+[YAX,YAY,YAZ] = transformPointsForward(TFormAffine2d,XAX,XAY,XAZ);
+YA = [YAX,YAY,YAZ];
+
+XAH = zeros(4,2);
+XAH(1,1) = XA(1,1)/XA(1,3);
+XAH(1,2) = XA(1,2)/XA(1,3);
+XAH(2,1) = XA(2,1)/XA(1,3);
+XAH(2,2) = XA(2,2)/XA(1,3);
+XAH(3,1) = XA(3,1)/XA(1,3);
+XAH(3,2) = XA(3,2)/XA(1,3);
+XAH(4,1) = XA(4,1)/XA(1,3);
+XAH(4,2) = XA(4,2)/XA(1,3);
+
+YAH = zeros(4,2);
+YAH(1,1) = YA(1,1)/YA(1,3);
+YAH(1,2) = YA(1,2)/YA(1,3);
+YAH(2,1) = YA(2,1)/YA(1,3);
+YAH(2,2) = YA(2,2)/YA(1,3);
+YAH(3,1) = YA(3,1)/YA(1,3);
+YAH(3,2) = YA(3,2)/YA(1,3);
+YAH(4,1) = YA(4,1)/YA(1,3);
+YAH(4,2) = YA(4,2)/YA(1,3);
+
+display(XA)
+display(YA)
+display(XAH)
+display(YAH)
 
 
-[YAX,YAY,YAZ] = transformPointsForward(TForm,XAX,XAY,XAZ);
 
 
-display(YAX)
-display(YAY)
-display(YAZ)
+
+TFormProj = fitgeotrans(YAH,XAH,'projective')
 return
 
 %***********************************************************************

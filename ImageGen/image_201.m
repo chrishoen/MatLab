@@ -6,12 +6,12 @@ function image_201
 fprintf('************************************************************************************')
 
 NRows = 1000;
-X = checkerboard(NRows/8)>0.5;
+IX = checkerboard(NRows/8)>0.5;
 
 
 %***********************************************************************
-R = rotateXYZDinv(0,0,0);
-T = [0;0;8];
+R = rotateXYZDinv(0,0,45);
+T = [0;0;0];
 
 A = [R; T'];
 B = [0;0;0;1];
@@ -19,8 +19,6 @@ C = [A,B]
 TFormAffine2d = affine3d(C);
 
 %***********************************************************************
-
-XA = [11 12 13;21 22 23;31 32 33;41 42 43];
 
 XA = [-1 -1 4;
       -1  1 4;
@@ -54,16 +52,22 @@ YAH(3,2) = YA(3,2)/YA(1,3);
 YAH(4,1) = YA(4,1)/YA(1,3);
 YAH(4,2) = YA(4,2)/YA(1,3);
 
+TFormProj = fitgeotrans(YAH,XAH,'projective')
+
 display(XA)
 display(YA)
 display(XAH)
 display(YAH)
+%***********************************************************************
+
+IY = imwarp(IX,TFormProj);
+display(size(IX))
+display(size(IY))
+
+imshow(IY)
 
 
 
-
-
-TFormProj = fitgeotrans(YAH,XAH,'projective')
 return
 
 %***********************************************************************

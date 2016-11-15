@@ -1,54 +1,41 @@
-%
+%***********************************************************************
+%***********************************************************************
+%***********************************************************************
 function image_201
 
 NRows = 1000;
-
-R = rotateXYZDinv(0.0,0.0,30.0);
-T = [0;0;100];
-T=zeros(3,3);
-
-
-NRows = 1000;
 X = checkerboard(NRows/8)>0.5;
 
 
-cameraParms = cameraParameters(...
-    'RotationVectors',R,...
-    'TranslationVectors',T)
-                   
-display(R)
+%***********************************************************************
+R = rotateXYZDinv(0,0,45);
+T = [1,2,3];
 
-[Y, newOrigin] = undistortImage(X, cameraParms, 'OutputView', 'full');
+A = [R; T]
+B = [0;0;0;1]
+C = [A,B]
+TForm = affine3d(C);
 
-%imshow(Y)
-display(cameraParms.RotationMatrices)
+%***********************************************************************
+
+XA = [11 12 13;21 22 23;31 32 33;41 42 43]
+XAX = XA(:, 1);
+XAY = XA(:, 2);
+XAZ = XA(:, 3);
+
+
+
+[YAX,YAY,YAZ] = transformPointsForward(TForm,XAX,XAY,XAZ);
+
+
+display(YAX)
+display(YAY)
+display(YAZ)
 return
-%END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-function image_1022
-
-NRows = 1000;
-
-X = checkerboard(NRows/8)>0.5;
-
-
-
-theta = 10;
-
-TForm = affine2d([cosd(theta) -sind(theta) 0; sind(theta) cosd(theta) 0; 0 0 1]);
-TForm = affine2d([1 0 0; 0 1 0; 0 0 1]);
-
-Y = imwarp(X,TForm);
-
-
-imshow(Y);
-
-display(TForm)
-
-return
-%END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-%BEGIN>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+%***********************************************************************
+%***********************************************************************
+%***********************************************************************
 function R=rotateX(t)
 R=[1 0 0; 0 cos(t) -sin(t); 0 sin(t) cos(t)];
 
@@ -64,6 +51,5 @@ R = rotateX(deg2rad(ax))*rotateY(deg2rad(ay))*rotateZ(deg2rad(az));
 function RT=rotateXYZDinv(ay,ax,az)
 R = rotateX(deg2rad(ax))*rotateY(deg2rad(ay))*rotateZ(deg2rad(az));
 RT = R';
-%END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 

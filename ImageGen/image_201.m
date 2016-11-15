@@ -10,7 +10,7 @@ IX = checkerboard(NRows/8)>0.5;
 
 
 %***********************************************************************
-R = rotateXYZDinv(45,0,0);
+R = rotateXYZDinv(0,0,0);
 T = [0;0;0];
 
 A = [R; T'];
@@ -21,8 +21,8 @@ TFormAffine2d = affine3d(C);
 %***********************************************************************
 
 XA = [-1 -1 4;
-      -1  1 4;
        1 -1 4;
+      -1  1 4;
        1  1 4];
   
 XAX = XA(:, 1);
@@ -64,7 +64,7 @@ IY = imwarp(IX,TFormProj);
 display(size(IX))
 display(size(IY))
 
-imshow(IY)
+imshow(IX), figure, imshow(IY)
 
 
 

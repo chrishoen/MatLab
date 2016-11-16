@@ -1,41 +1,59 @@
 %***********************************************************************
 %***********************************************************************
 %***********************************************************************
-function projective_103
+function projective_104
 
 fprintf('**************************************************************')
 
 NRows = 1000;
 IX = checkerboard(NRows/8)>0.5;
 
-
 %***********************************************************************
 
-XAH = [ 0  0;
-        1  0;
-        1  1;
-        0  1]*1000;
-  
-YAH = [ 0.25  0;
-        0.75  0;
-           1  1;
-           0  1]*1000;
+XA = [-1 -1 4;
+       1 -1 4;
+      -1  1 4;
+       1  1 4];
 
-XAH = [ -1 -1;
-         1 -1;
-         1  1;
-        -1  1]*1000;
+Cs = cosd(30);   
+Ss = sind(30);   
+
+YA = [-1 -Cs 4+Ss;
+       1 -Cs 4+Ss;
+      -1  Cs 4-Ss;
+       1  Cs 4-Ss];
   
-YAH = [ -1 -1;
-         1 -1;
-         1  1;
-        -1  1]*1500;
-  
-YAH = [ -0.5 -0.5;
-         0.5 -0.5;
-         1.5  0.5;
-        -1.5  0.5]*1000;
-  
+XAX = XA(:, 1);
+XAY = XA(:, 2);
+XAZ = XA(:, 3);
+
+YAX = YA(:, 1);
+YAY = YA(:, 2);
+YAZ = YA(:, 3);
+
+XAH = zeros(4,2);
+XAH(1,1) = XA(1,1)/XA(1,3);
+XAH(1,2) = XA(1,2)/XA(1,3);
+XAH(2,1) = XA(2,1)/XA(2,3);
+XAH(2,2) = XA(2,2)/XA(2,3);
+XAH(3,1) = XA(3,1)/XA(3,3);
+XAH(3,2) = XA(3,2)/XA(3,3);
+XAH(4,1) = XA(4,1)/XA(4,3);
+XAH(4,2) = XA(4,2)/XA(4,3);
+
+YAH = zeros(4,2);
+YAH(1,1) = YA(1,1)/YA(1,3);
+YAH(1,2) = YA(1,2)/YA(1,3);
+YAH(2,1) = YA(2,1)/YA(2,3);
+YAH(2,2) = YA(2,2)/YA(2,3);
+YAH(3,1) = YA(3,1)/YA(3,3);
+YAH(3,2) = YA(3,2)/YA(3,3);
+YAH(4,1) = YA(4,1)/YA(4,3);
+YAH(4,2) = YA(4,2)/YA(4,3);
+
+XAH=XAH*1000;
+YAH=YAH*1000;
+
 
 TForm = fitgeotrans(YAH,XAH,'projective');
 
@@ -53,15 +71,10 @@ RefY = imref2d(imageSizeY,worldLimitsY,worldLimitsY);
 [IY,RefYY] = imwarp(IX,RefX,TForm,'OutputView',RefY);
 
 
-display(size(XAH))
-display(size(YAH))
-
 display(XAH)
 display(YAH)
-display(size(IX),'size(IX)')
-display(size(IY),'size(IY)')
-display(RefX)
-display(RefY)
+%display(RefX)
+%display(RefY)
 
 imshow(IY,RefYY)
 %subplot(1,2,1), imshow(IX)

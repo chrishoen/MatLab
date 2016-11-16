@@ -1,7 +1,7 @@
 %***********************************************************************
 %***********************************************************************
 %***********************************************************************
-function projective_103
+function translate_101
 
 fprintf('**************************************************************')
 
@@ -11,33 +11,11 @@ IX = checkerboard(NRows/8)>0.5;
 
 %***********************************************************************
 
-XAH = [ 0  0;
-        1  0;
-        1  1;
-        0  1]*1000;
-  
-YAH = [ 0.25  0;
-        0.75  0;
-           1  1;
-           0  1]*1000;
+AH = [ 1 0 0;
+       0 1 0;
+       100 100 1 ] 
 
-XAH = [ -1 -1;
-         1 -1;
-         1  1;
-        -1  1]*1000;
-  
-YAH = [ -1 -1;
-         1 -1;
-         1  1;
-        -1  1]*1500;
-  
-YAH = [ -0.5 -0.5;
-         0.5 -0.5;
-         1.5  0.5;
-        -1.5  0.5]*1000;
-  
-
-TForm = fitgeotrans(YAH,XAH,'projective');
+TForm = affine2d(AH);
 
 %TForm = projective2d();
 
@@ -52,12 +30,6 @@ RefY = imref2d(imageSizeY,worldLimitsY,worldLimitsY);
 
 [IY,RefYY] = imwarp(IX,RefX,TForm,'OutputView',RefY);
 
-
-display(size(XAH))
-display(size(YAH))
-
-display(XAH)
-display(YAH)
 display(size(IX),'size(IX)')
 display(size(IY),'size(IY)')
 display(RefX)

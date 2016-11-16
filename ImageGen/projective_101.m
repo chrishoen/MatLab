@@ -3,7 +3,7 @@
 %***********************************************************************
 function projective_101
 
-fprintf('************************************************************************************')
+fprintf('**************************************************************')
 
 NRows = 1000;
 IX = checkerboard(NRows/8)>0.5;
@@ -13,24 +13,26 @@ IX = checkerboard(NRows/8)>0.5;
 
 XAH = [ 0  0;
         1  0;
-        0  1;
-        1  1]*NRows;
+        1  1;
+        0  1]*NRows;
   
 YAH = [ 0.25  0;
         0.75  0;
-           0  1;
-           1  1]*NRows;
+           1  1;
+           0  1]*NRows;
 
-TFormProj = fitgeotrans(YAH,XAH,'projective')
+TForm = fitgeotrans(YAH,XAH,'projective')
+
+%***********************************************************************
+Ref = imref2d(size(IX),[1 size(IX,2)],[1 size(IX,1)]);
+IY = imwarp(IX,Ref,TForm,'OutputView',Ref);
+
 
 display(size(XAH))
 display(size(YAH))
 
 display(XAH)
 display(YAH)
-%***********************************************************************
-
-IY = imwarp(IX,TFormProj);
 display(size(IX))
 display(size(IY))
 

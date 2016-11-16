@@ -1,7 +1,7 @@
 %***********************************************************************
 %***********************************************************************
 %***********************************************************************
-function projective_101
+function projective_102
 
 fprintf('**************************************************************')
 
@@ -11,7 +11,7 @@ IX = checkerboard(NRows/8)>0.5;
 
 %***********************************************************************
 R = rotateXYZDinv(0,0,0);
-T = [0;0;0];
+T = [0;0;-2];
 
 A = [R; T'];
 B = [0;0;0;1];
@@ -55,20 +55,22 @@ YAH(4,2) = YA(4,2)/YA(1,3);
 XAH = XAH*NRows;
 YAH = YAH*NRows;
 
-TForm = fitgeotrans(YAH,XAH,'projective')
+TForm = fitgeotrans(YAH,XAH,'projective');
 
 %***********************************************************************
 Ref = imref2d(size(IX),[1 size(IX,2)],[1 size(IX,1)]);
 IY = imwarp(IX,Ref,TForm,'OutputView',Ref);
 
 
+display(TForm,'TForm');
+display(Ref,'Ref');
 display(size(XAH))
 display(size(YAH))
 
 display(XAH)
 display(YAH)
-display(size(IX))
-display(size(IY))
+display(size(IX),'size IX')
+display(size(IY),'size IY')
 
 imshow(IY)
 

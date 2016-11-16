@@ -14,12 +14,28 @@ IX = checkerboard(NRows/8)>0.5;
 XAH = [ 0  0;
         1  0;
         1  1;
-        0  1]*NRows;
+        0  1]*1000;
   
 YAH = [ 0.25  0;
         0.75  0;
            1  1;
-           0  1]*NRows;
+           0  1]*1000;
+
+XAH = [ -1 -1;
+         1 -1;
+         1  1;
+        -1  1]*1000;
+  
+YAH = [ -1 -1;
+         1 -1;
+         1  1;
+        -1  1]*1500;
+  
+YAH = [ -0.5 -0.5;
+         0.5 -0.5;
+         1.5  0.5;
+        -1.5  0.5]*1000;
+  
 
 TForm = fitgeotrans(YAH,XAH,'projective');
 
@@ -28,15 +44,10 @@ TForm = fitgeotrans(YAH,XAH,'projective');
 %***********************************************************************
 imageSizeX = size(IX);
 worldLimitsX = [-500 500];
-
-RefX = imref2d(size(IX),[1 size(IX,2)],[1 size(IX,1)]);
 RefX = imref2d(imageSizeX,worldLimitsX,worldLimitsX);
 
-
-imageSizeY = size(IX);
-worldLimitsY = [249.5 750.5];
+imageSizeY = imageSizeX;
 worldLimitsY = [-1000 1000];
-
 RefY = imref2d(imageSizeY,worldLimitsY,worldLimitsY);
 
 IY = imwarp(IX,RefX,TForm,'OutputView',RefY);

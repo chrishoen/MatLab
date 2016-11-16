@@ -1,7 +1,7 @@
 %***********************************************************************
 %***********************************************************************
 %***********************************************************************
-function projective_104
+function projective_105
 
 fprintf('**************************************************************')
 
@@ -9,27 +9,33 @@ NRows = 1000;
 IX = checkerboard(NRows/8)>0.5;
 
 %***********************************************************************
+R = rotateXYZDinv(60,30,0);
+T = [0;0;2];
 
-XA = [-1 -1 4;
-       1 -1 4
-      -1  1 4;
-       1  1 4];
+A = [R; T'];
+B = [0;0;0;1];
+C = [A,B];
+TFormA = affine3d(C);
 
-Cs = cosd(30);   
-Ss = sind(30);   
+%***********************************************************************
 
-YA = [-1 -Cs 4+Ss;
-       1 -Cs 4+Ss;
-      -1  Cs 4-Ss;
-       1  Cs 4-Ss];
-  
+XA = [-1 -1 0;
+       1 -1 0;
+      -1  1 0;
+       1  1 0];
+
+   
 XAX = XA(:, 1);
 XAY = XA(:, 2);
 XAZ = XA(:, 3);
 
-YAX = YA(:, 1);
-YAY = YA(:, 2);
-YAZ = YA(:, 3);
+[YAX,YAY,YAZ] = transformPointsForward(TFormA,XAX,XAY,XAZ);
+YA = [YAX,YAY,YAZ];
+
+XA = [-1 -1 4;
+       1 -1 4;
+      -1  1 4;
+       1  1 4];
 
 XAH = zeros(4,2);
 XAH(1,1) = XA(1,1)/XA(1,3);
@@ -56,7 +62,6 @@ YAH=YAH*1000;
 
 
 TForm = fitgeotrans(YAH,XAH,'projective');
-
 %TForm = projective2d();
 
 %***********************************************************************
@@ -75,9 +80,10 @@ RefY = imref2d(imageSizeY,worldLimitsY,worldLimitsY);
 %display(YAH)
 display(XA)
 display(YA)
-
 %display(RefX)
 %display(RefY)
+display(TFormA.T)
+
 
 imshow(IY,RefYY)
 %subplot(1,2,1), imshow(IX)

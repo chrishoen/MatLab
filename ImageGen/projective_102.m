@@ -10,8 +10,8 @@ IX = checkerboard(NRows/8)>0.5;
 
 
 %***********************************************************************
-R = rotateXYZDinv(0,0,0);
-T = [0;0;-2];
+R = rotateXYZDinv(30,0,0);
+T = [0;0;0];
 
 A = [R; T'];
 B = [0;0;0;1];
@@ -35,22 +35,22 @@ YA = [YAX,YAY,YAZ];
 XAH = zeros(4,2);
 XAH(1,1) = XA(1,1)/XA(1,3);
 XAH(1,2) = XA(1,2)/XA(1,3);
-XAH(2,1) = XA(2,1)/XA(1,3);
-XAH(2,2) = XA(2,2)/XA(1,3);
-XAH(3,1) = XA(3,1)/XA(1,3);
-XAH(3,2) = XA(3,2)/XA(1,3);
-XAH(4,1) = XA(4,1)/XA(1,3);
-XAH(4,2) = XA(4,2)/XA(1,3);
+XAH(2,1) = XA(2,1)/XA(2,3);
+XAH(2,2) = XA(2,2)/XA(2,3);
+XAH(3,1) = XA(3,1)/XA(3,3);
+XAH(3,2) = XA(3,2)/XA(3,3);
+XAH(4,1) = XA(4,1)/XA(4,3);
+XAH(4,2) = XA(4,2)/XA(4,3);
 
 YAH = zeros(4,2);
 YAH(1,1) = YA(1,1)/YA(1,3);
 YAH(1,2) = YA(1,2)/YA(1,3);
-YAH(2,1) = YA(2,1)/YA(1,3);
-YAH(2,2) = YA(2,2)/YA(1,3);
-YAH(3,1) = YA(3,1)/YA(1,3);
-YAH(3,2) = YA(3,2)/YA(1,3);
-YAH(4,1) = YA(4,1)/YA(1,3);
-YAH(4,2) = YA(4,2)/YA(1,3);
+YAH(2,1) = YA(2,1)/YA(2,3);
+YAH(2,2) = YA(2,2)/YA(2,3);
+YAH(3,1) = YA(3,1)/YA(3,3);
+YAH(3,2) = YA(3,2)/YA(3,3);
+YAH(4,1) = YA(4,1)/YA(4,3);
+YAH(4,2) = YA(4,2)/YA(4,3);
 
 XAH = XAH*NRows;
 YAH = YAH*NRows;
@@ -62,8 +62,8 @@ Ref = imref2d(size(IX),[1 size(IX,2)],[1 size(IX,1)]);
 IY = imwarp(IX,Ref,TForm,'OutputView',Ref);
 
 
-display(TForm,'TForm');
-display(Ref,'Ref');
+%display(TForm,'TForm');
+%display(Ref,'Ref');
 display(size(XAH))
 display(size(YAH))
 
@@ -93,7 +93,7 @@ R=[cos(t) -sin(t) 0; sin(t) cos(t) 0; 0 0 1];
 function R=rotateXYZD(ax,ay,az)
 R = rotateX(deg2rad(ax))*rotateY(deg2rad(ay))*rotateZ(deg2rad(az));
 
-function RT=rotateXYZDinv(ay,ax,az)
+function RT=rotateXYZDinv(ax,ay,az)
 R = rotateX(deg2rad(ax))*rotateY(deg2rad(ay))*rotateZ(deg2rad(az));
 RT = R';
 

@@ -1,15 +1,15 @@
 %BEGIN>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 function checkerboard_101
 
-squareSize = 10;
-I = double(checkerboard(squareSize) > 0.5);
-X = generateCheckerboardPoints([8 8], squareSize);
-    
-display(size(X))
+NumPixels  = 1000;
+NumSquares =20;
+PixelsPerSide = NumPixels/(NumSquares*2);
 
-Rows = size(X,1);
-Y = cat(2,X,zeros(Rows,1))
-size(Y)
+IX = checkerboard(PixelsPerSide,NumSquares) > 0.5;
+    
+display(size(IX),'size(IX)');
+
+imshow(IX)
 
 
 

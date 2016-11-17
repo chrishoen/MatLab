@@ -5,13 +5,17 @@ function projective_106
 
 fprintf('**************************************************************')
 
-NRows = 1000;
-IX = checkerboard(NRows/8)>0.5;
+NumPixels  = 1000;
+NumSquares = 20;
+PixelsPerSide = NumPixels/(NumSquares*2);
+
+IX = checkerboard(PixelsPerSide,NumSquares) > 0.5;
+
 
 %***********************************************************************
-R = rotateXYZDinv(0,30,0);
+R = rotateXYZDinv(60,0,0);
 TX = [0;0;4];
-TY = [0;0;6];
+TY = [0;0;8];
 
 %***********************************************************************
 
@@ -50,8 +54,8 @@ YAH(2,2) = PY2(2)/PY2(3);
 YAH(3,2) = PY3(2)/PY3(3);
 YAH(4,2) = PY4(2)/PY4(3);
 
-XAH=XAH*1000;
-YAH=YAH*1000;
+XAH=XAH*NumPixels;
+YAH=YAH*NumPixels;
 
 TForm = fitgeotrans(XAH,YAH,'projective');
 %TForm = projective2d();
@@ -63,6 +67,7 @@ RefX = imref2d(imageSizeX,worldLimitsX,worldLimitsX);
 
 imageSizeY = imageSizeX;
 worldLimitsY = [-1000 1000];
+worldLimitsY = [-500 500];
 RefY = imref2d(imageSizeY,worldLimitsY,worldLimitsY);
 
 [IY,RefYY] = imwarp(IX,RefX,TForm,'OutputView',RefY);

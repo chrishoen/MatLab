@@ -13,7 +13,7 @@ PixelsPerSide = NumPixels/(NumSquares*2);
 
 IX = checkerboard(PixelsPerSide,NumSquares) > 0.5;
 
-TY = [0;0;6];
+TY = [0;0;8];
 
 EulerY1 = [-60,0,0];
 [IY1,IYRef] = transformIX(IX,TY,EulerY1);

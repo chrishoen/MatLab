@@ -11,9 +11,9 @@ fig1 = figure;
 %surf(X1)
 stem3(X1)
 %print(fig1,'C:\Alpha\Image\SubImage_1','-dpng')
-return 
-Rmin = 5;
-Rmax = 14;
+return
+Rmin = 2;
+Rmax = 15;
 
 [centers, radii] = imfindcircles(X1,[Rmin Rmax])
 

@@ -1,8 +1,12 @@
 function plot_signal
 
 x = load('C:\Alpha\Data\SignalHistory.csv');
-plot(x(:,2),x(:,4))
-axis([0 inf -10.0 10.0])
+figure 
+hold on
+plot(x(:,2),x(:,3));
+plot(x(:,2),x(:,4));
+%axis([1.0 1.2 -10.0 10.0])
+eaxis([0 inf -10.0 10.0])
 h=zoom;
 set(h,'Motion','horizontal','Enable','on');
 

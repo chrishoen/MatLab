@@ -1,4 +1,4 @@
-function plot_history3
+efunction plot_history3
 
 x = load('C:\Alpha\Data\SignalHistory.csv');
 

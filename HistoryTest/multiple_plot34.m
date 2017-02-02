@@ -2,8 +2,10 @@ function multiple_plot34
 
 x = load('C:\Alpha\Data\SignalHistory.csv');
 
+set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','HistoryTest','NumberTitle','off')
 hold on
+
 ax1 = subplot(2,1,1);
 ax2 = subplot(2,1,2);
 

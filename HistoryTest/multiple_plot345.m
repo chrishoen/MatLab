@@ -2,6 +2,10 @@ function multiple_plot345
 
 x = load('C:\Alpha\Data\SignalHistory.csv');
 
+set(0,'DefaultFigureWindowStyle','docked')
+figure('Name','HistoryTest','NumberTitle','off')
+hold on
+
 ax1 = subplot(3,1,1);
 ax2 = subplot(3,1,2);
 ax3 = subplot(3,1,3);

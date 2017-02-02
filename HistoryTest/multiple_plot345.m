@@ -9,6 +9,7 @@ ax3 = subplot(3,1,3);
 XA=[0 inf -2 2];
 
 
+
 plot(ax1,x(:,2),x(:,3))
 axis(ax1,XA)
 

@@ -1,5 +1,7 @@
 function plot_history34
 
+com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
+
 set(0,'DefaultFigureWindowStyle','docked');
 x = load('C:\Alpha\Data\SignalHistory.csv');
 

@@ -1,5 +1,7 @@
 function multiple_plot345
 
+com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
+
 x = load('C:\Alpha\Data\SignalHistory.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')

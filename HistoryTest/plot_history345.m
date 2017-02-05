@@ -1,4 +1,4 @@
-function plot_history34
+function plot_history345
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 

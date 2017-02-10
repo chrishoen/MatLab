@@ -1,6 +1,7 @@
 %***********************************************************BEGIN
 function image_101
 
+set(0,'DefaultFigureWindowStyle','docked');
 X1 = imread('C:\Alpha\Image\SubImage3.jpg');
 %size(X1)
 %imshow(X1)

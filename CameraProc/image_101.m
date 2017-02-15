@@ -3,7 +3,6 @@ function image_101
 
 set(0,'DefaultFigureWindowStyle','docked');
 X1 = imread('C:\Alpha\Image\SubImage3.jpg');
-%X1 = imread('C:\Alpha\Image\Save\SubImage3_2.jpg');
 %size(X1)
 %imshow(X1)
 %imhist(X1)

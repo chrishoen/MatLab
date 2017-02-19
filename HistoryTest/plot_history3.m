@@ -1,5 +1,6 @@
 function plot_history3
 
+set(0,'DefaultFigureWindowStyle','docked');
 x = load('C:\Alpha\Data\SignalHistory.csv');
 
 figure 

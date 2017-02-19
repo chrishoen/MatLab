@@ -11,7 +11,7 @@ hold on
 ax1 = subplot(2,1,1);
 ax2 = subplot(2,1,2);
 
-XA=[0 inf -2 2];
+XA=[0 inf -20 20];
 
 plot(ax1,x(:,2),x(:,3))
 axis(ax1,XA)

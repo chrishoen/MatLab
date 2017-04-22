@@ -2,7 +2,7 @@ function multiple_plot345
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x = load('C:\RESULTS\History\SignalHistory.csv');
+x = load('C:\RESULTS\History\SignalHistory1.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','HistoryTest','NumberTitle','off')

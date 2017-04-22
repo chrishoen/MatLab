@@ -1,13 +1,13 @@
-function plot_history34
+function plot_history33
 
 set(0,'DefaultFigureWindowStyle','docked');
-x = load('C:\RESULTS\History\SignalHistory1.csv');
+x1 = load('C:\RESULTS\History\SignalHistory1.csv');
+x2 = load('C:\RESULTS\History\SignalHistory2.csv');
 
 figure('Name','HistoryTest','NumberTitle','off')
 hold on
-plot([min(x(:,2)) max(x(:,2))],[0 0],'k-')
-plot(x(:,2),x(:,3));
-plot(x(:,2),x(:,4));
+plot(x1(:,2),x1(:,3));
+plot(x2(:,2),x2(:,4));
 axis([0 inf -10.0 10.0])
 
 

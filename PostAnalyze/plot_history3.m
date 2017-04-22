@@ -1,7 +1,7 @@
 function plot_history3
 
 set(0,'DefaultFigureWindowStyle','docked');
-x = load('C:\RESULTS\History\SignalHistory.csv');
+x = load('C:\RESULTS\History\SignalHistory1.csv');
 
 figure 
 hold on

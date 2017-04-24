@@ -1,11 +1,11 @@
-function PeriodicTiltAngle_multiple_34
+function SmoothedXY_multiple
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x = load('C:\RESULTS\History\PeriodicTiltANgle.csv');
+x = load('C:\RESULTS\History\Smoothed.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','HistoryTest','NumberTitle','off')
+figure('Name','SmoothedXY','NumberTitle','off')
 hold on
 
 ax1 = subplot(2,1,1);

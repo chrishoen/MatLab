@@ -6,7 +6,7 @@ x1 = load('C:\RESULTS\History\Periodic.csv');
 x2 = load('C:\RESULTS\History\Smoothed.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','Periodic_PS','NumberTitle','off')
+figure('Name','PeriodicY_PS','NumberTitle','off')
 hold on
 
 ax1 = subplot(2,1,1);

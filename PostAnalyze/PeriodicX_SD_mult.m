@@ -2,11 +2,11 @@ function PeriodicX_SD_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\History\Periodic.csv');
+x1 = load('C:\RESULTS\History\Smoothed.csv');
 x2 = load('C:\RESULTS\History\Differentiated.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','Periodic_SD','NumberTitle','off')
+figure('Name','PeriodicX_SD','NumberTitle','off')
 hold on
 
 ax1 = subplot(2,1,1);

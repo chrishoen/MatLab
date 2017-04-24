@@ -1,11 +1,11 @@
-function DifferentiatedXY_multiple2
+function DifferentiatedXY_DD_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
 x = load('C:\RESULTS\History\Differentiated.csv');
 
 set(0,'defaultFigureWindowStyle','docked')
-figure('Name','DifferentiatedXY','NumberTitle','off')
+figure('Name','DifferentiatedXY_DD','NumberTitle','off')
 hold on
 
 ax1 = subplot(2,1,1);

@@ -1,4 +1,4 @@
-function PeriodicX_multiple2
+function PeriodicX_PS_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
@@ -6,7 +6,7 @@ x1 = load('C:\RESULTS\History\Periodic.csv');
 x2 = load('C:\RESULTS\History\Smoothed.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','Periodic,SmoothedX','NumberTitle','off')
+figure('Name','Periodic_PS','NumberTitle','off')
 hold on
 
 ax1 = subplot(2,1,1);

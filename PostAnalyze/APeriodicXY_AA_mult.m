@@ -1,11 +1,11 @@
-function APeriodicXY_multiple
+function APeriodicXY_AA_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
 x = load('C:\RESULTS\History\APeriodic.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','APeriodicXY','NumberTitle','off')
+figure('Name','APeriodicXY_AA','NumberTitle','off')
 hold on
 
 ax1 = subplot(2,1,1);

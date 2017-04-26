@@ -2,7 +2,7 @@ function SmoothedXY_SS_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x = load('C:\RESULTS\History\Smoothed.csv');
+x = load('C:\RESULTS\PlotFiles\Smoothed.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','SmoothedXY_SS','NumberTitle','off')

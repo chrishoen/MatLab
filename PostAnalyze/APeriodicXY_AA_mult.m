@@ -2,7 +2,7 @@ function APeriodicXY_AA_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x = load('C:\RESULTS\History\APeriodic.csv');
+x = load('C:\RESULTS\PlotFiles\APeriodic.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','APeriodicXY_AA','NumberTitle','off')

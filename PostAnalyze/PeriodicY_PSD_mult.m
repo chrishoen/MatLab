@@ -2,9 +2,9 @@ function PeriodicY_PSD_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\History\Periodic.csv');
-x2 = load('C:\RESULTS\History\Smoothed.csv');
-x3 = load('C:\RESULTS\History\Differentiated.csv');
+x1 = load('C:\RESULTS\PlotFiles\Periodic.csv');
+x2 = load('C:\RESULTS\PlotFiles\Smoothed.csv');
+x3 = load('C:\RESULTS\PlotFiles\Differentiated.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','Periodic_PSD','NumberTitle','off')

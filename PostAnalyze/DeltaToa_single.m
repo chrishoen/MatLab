@@ -1,7 +1,7 @@
 function DeltaToa_single
 
 set(0,'DefaultFigureWindowStyle','docked');
-x = load('C:\RESULTS\History\DeltaToa.csv');
+x = load('C:\RESULTS\PlotFiles\DeltaToa.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','DeltaToa','NumberTitle','off')

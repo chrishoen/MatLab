@@ -2,8 +2,8 @@ function PeriodicY_PS_single
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\History\Periodic.csv');
-x2 = load('C:\RESULTS\History\Smoothed.csv');
+x1 = load('C:\RESULTS\PlotFiles\Periodic.csv');
+x2 = load('C:\RESULTS\PlotFiles\Smoothed.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','PeriodicY_PS','NumberTitle','off')

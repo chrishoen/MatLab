@@ -2,8 +2,8 @@ function PeriodicY_SD_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\History\Smoothed.csv');
-x2 = load('C:\RESULTS\History\Differentiated.csv');
+x1 = load('C:\RESULTS\PlotFiles\Smoothed.csv');
+x2 = load('C:\RESULTS\PlotFiles\Differentiated.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','PeriodicY_SD','NumberTitle','off')

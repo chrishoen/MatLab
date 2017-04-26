@@ -2,7 +2,7 @@ function PeriodicXY_PP_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x = load('C:\RESULTS\History\Periodic.csv');
+x = load('C:\RESULTS\PlotFiles\Periodic.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','PeriodicXY_PP','NumberTitle','off')

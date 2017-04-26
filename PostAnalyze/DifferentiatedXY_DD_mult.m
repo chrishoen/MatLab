@@ -2,7 +2,7 @@ function DifferentiatedXY_DD_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x = load('C:\RESULTS\History\Differentiated.csv');
+x = load('C:\RESULTS\PlotFiles\Differentiated.csv');
 
 set(0,'defaultFigureWindowStyle','docked')
 figure('Name','DifferentiatedXY_DD','NumberTitle','off')

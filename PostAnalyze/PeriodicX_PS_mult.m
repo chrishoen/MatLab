@@ -2,8 +2,8 @@ function PeriodicX_PS_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\History\Periodic.csv');
-x2 = load('C:\RESULTS\History\Smoothed.csv');
+x1 = load('C:\RESULTS\PlotFiles\Periodic.csv');
+x2 = load('C:\RESULTS\PlotFiles\Smoothed.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','PeriodicX_PS','NumberTitle','off')

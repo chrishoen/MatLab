@@ -1,9 +1,9 @@
-function PeriodicX_SD_mult
+function AlignmentX_AS_mult
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\PlotFiles\Smoothed.csv');
-x2 = load('C:\RESULTS\PlotFiles\Differentiated.csv');
+x1 = load('C:\RESULTS\PlotFiles\Alignment.csv');
+x2 = load('C:\RESULTS\PlotFiles\Smoothed.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','PeriodicX_SD','NumberTitle','off')
@@ -12,7 +12,7 @@ hold on
 ax1 = subplot(2,1,1);
 ax2 = subplot(2,1,2);
 
-XA1=[0 inf -12 12];
+XA1=[0 inf 0 1];
 XA2=[0 inf -12 12];
 
 plot(ax1,x1(:,2),x1(:,3))

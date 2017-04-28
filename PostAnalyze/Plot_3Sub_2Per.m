@@ -2,12 +2,12 @@ function Alignment_SSDDA
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\PlotFiles\Smoothed_B.csv');
-x2 = load('C:\RESULTS\PlotFiles\Differentiated_B.csv');
+x1 = load('C:\RESULTS\PlotFiles\Smoothed_A.csv');
+x2 = load('C:\RESULTS\PlotFiles\Differentiated_A.csv');
 x3 = load('C:\RESULTS\PlotFiles\Alignment.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','Alignment_SSDDA_B','NumberTitle','off')
+figure('Name','Alignment_SSDDA_A','NumberTitle','off')
 hold on
 
 

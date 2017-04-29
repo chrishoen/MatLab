@@ -2,7 +2,7 @@ function FFT_1Sub_1Per
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\PlotFiles\Smoothed_A.csv');
+x1 = load('C:\RESULTS\PlotFiles\Periodic_A.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','FFT_A dynamic','NumberTitle','off')

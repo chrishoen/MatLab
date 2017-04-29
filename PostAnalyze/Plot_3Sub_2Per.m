@@ -1,19 +1,21 @@
-function Alignment_SSDDA
+function Plot_3Sub_2Per
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\PlotFiles\Smoothed_B.csv');
-x2 = load('C:\RESULTS\PlotFiles\Differentiated_B.csv');
+x1 = load('C:\RESULTS\PlotFiles\Smoothed_A.csv');
+x2 = load('C:\RESULTS\PlotFiles\Differentiated_A.csv');
 x3 = load('C:\RESULTS\PlotFiles\Alignment.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','Alignment_SSDDA_59_B','NumberTitle','off')
+figure('Name','Alignment_59_A','NumberTitle','off')
 hold on
 
 
 ta1=[0 inf -12 12];
 ta2=[0 inf -20 20];
 ta3=[0 inf 0 1];
+
+xz2 = zeros([1 size(x2(:,1))]);
 
 sp1 = subplot(3,1,1);
 hold on
@@ -25,6 +27,7 @@ sp2 = subplot(3,1,2);
 hold on
 plot(sp2,x2(:,2),x2(:,3))
 plot(sp2,x2(:,2),x2(:,4))
+plot(sp2,x2(:,2),xz2)
 axis(sp2,ta2)
 
 sp3 = subplot(3,1,3);

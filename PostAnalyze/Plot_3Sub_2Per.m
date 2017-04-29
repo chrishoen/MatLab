@@ -32,6 +32,7 @@ hold on
 plot(sp3,x3(:,2),x3(:,3))
 axis(sp3,ta3)
 
+linkaxes([sp1,sp2,sp3],'x')
 h=zoom;
 set(h,'Motion','horizontal','Enable','on');
 

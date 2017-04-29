@@ -5,7 +5,7 @@ com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER')
 x1 = load('C:\RESULTS\PlotFiles\Smoothed_A.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','FFT_A','NumberTitle','off')
+figure('Name','FFT_A dynamic','NumberTitle','off')
 hold on
 
 X = x1(:,3);
@@ -26,7 +26,8 @@ M = 1+(length(P1)-1)/MS;
 
 FP = F(1:M);
 PP = P1(1:M);
-plot(FP,PP);
+PL = plot(FP,PP);
+axis([0 inf 0 0.1])
 size(FP);
 
 title('Amplitude Spectrum')

@@ -2,17 +2,17 @@ function Alignment_SSDDA
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\PlotFiles\Smoothed_A.csv');
-x2 = load('C:\RESULTS\PlotFiles\Differentiated_A.csv');
+x1 = load('C:\RESULTS\PlotFiles\Smoothed_B.csv');
+x2 = load('C:\RESULTS\PlotFiles\Differentiated_B.csv');
 x3 = load('C:\RESULTS\PlotFiles\Alignment.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','Alignment_SSDDA_A','NumberTitle','off')
+figure('Name','Alignment_SSDDA_59_B','NumberTitle','off')
 hold on
 
 
 ta1=[0 inf -12 12];
-ta2=[0 inf -15 15];
+ta2=[0 inf -20 20];
 ta3=[0 inf 0 1];
 
 sp1 = subplot(3,1,1);

@@ -7,7 +7,7 @@ x2 = load('C:\RESULTS\PlotFiles\FirstDerivative_H.csv');
 x3 = load('C:\RESULTS\PlotFiles\Alignment.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','Alignment','NumberTitle','off')
+figure('Name','Alignment 59','NumberTitle','off')
 hold on
 
 

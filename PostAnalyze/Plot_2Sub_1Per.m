@@ -2,11 +2,12 @@ function Plot_2Sub_1Per
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\Alpha\Data\SignalHistory.csv');
-x2 = load('C:\Alpha\Data\SignalHistory2.csv');
+x1 = load('C:\RESULTS\PlotFiles\APeriodic_H.csv');
+x2 = load('C:\RESULTS\PlotFiles\Periodic_H.csv');
+x3 = load('C:\RESULTS\PlotFiles\Smoothed_H.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','Run4','NumberTitle','off')
+figure('Name','APeriodic A','NumberTitle','off')
 hold on
 
 
@@ -19,12 +20,14 @@ sp1 = subplot(2,1,1);
 hold on
 plot(sp1,x1(:,2),x1(:,3))
 plot(sp1,x2(:,2),x2(:,3))
+plot(sp1,x3(:,2),x3(:,3))
 axis(sp1,ta1)
 
 sp2 = subplot(2,1,2);
 hold on
 stem(sp2,x1(:,2),x1(:,3))
 stem(sp2,x2(:,2),x2(:,3))
+stem(sp2,x3(:,2),x3(:,3))
 axis(sp2,ta2)
 
 linkaxes([sp1,sp2],'x')

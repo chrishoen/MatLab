@@ -16,13 +16,13 @@ L = length(X);
 Y = fft(X);
 
 P2 = abs(Y/L);
-P1 = P2(1:L/2+1);
+P1 = P2(1:round(L/2)+1);
 P1(2:end-1) = 2*P1(2:end-1);
 
 F = Fs*(0:(L/2))/L;
 
 MS = (Fs/Fc)/2;
-M = 1+(length(P1)-1)/MS;
+M = round(1+(length(P1)-1)/MS);
 
 FP = F(1:M);
 PP = P1(1:M);

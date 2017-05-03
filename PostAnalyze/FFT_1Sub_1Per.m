@@ -2,10 +2,10 @@ function FFT_1Sub_1Per
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\RESULTS\PlotFiles\Alignment.csv');
+x1 = load('C:\RESULTS\PlotFiles\Smoothed_H.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','FFT_Alignment','NumberTitle','off')
+figure('Name','FFT_HTiltX','NumberTitle','off')
 hold on
 
 X = x1(:,3);
@@ -26,7 +26,7 @@ M = 1+(length(P1)-1)/MS;
 
 FP = F(1:M);
 PP = P1(1:M);
-PL = plot(FP,PP*50);
+PL = plot(FP,PP);
 axis([0 inf 0 0.1])
 size(FP);
 

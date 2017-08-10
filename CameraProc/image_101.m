@@ -13,7 +13,7 @@ if     (X1Select == 1)
    MyPlotName = 'CapturedImage';
 elseif (X1Select == 2)
    X1 = imread('C:\Alpha\Image\FilteredImage.jpg');
-   MyPlotName = FilteredImage';
+   MyPlotName = 'FilteredImage';
 elseif (X1Select == 3)
    X1 = imread('C:\Alpha\Image\SearchNeighborhood.jpg');
    MyPlotName = 'SearchNeighborhood';

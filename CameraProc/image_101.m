@@ -6,7 +6,7 @@ com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER')
 %*******************************************
 set(0,'DefaultFigureWindowStyle','docked')
 
-X1Select = 4;
+X1Select = 1;
 
 if     (X1Select == 1)
    X1 = imread('C:\Alpha\Image\CapturedImage.jpg');

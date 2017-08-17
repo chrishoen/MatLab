@@ -6,19 +6,20 @@ com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER')
 %*******************************************
 set(0,'DefaultFigureWindowStyle','docked')
 
-X1Select = 1;
+X1Select = 4;
+ImageDir = 'C:\IMAGE\Image_79\'
 
 if     (X1Select == 1)
-   X1 = imread('C:\Alpha\Image\CapturedImage.jpg');
+   X1 = imread(strcat(ImageDir,'CapturedImage.jpg'));
    MyPlotName = 'CapturedImage';
 elseif (X1Select == 2)
-   X1 = imread('C:\Alpha\Image\FilteredImage.jpg');
+   X1 = imread(strcat(ImageDir,'FilteredImage.jpg'));
    MyPlotName = 'FilteredImage';
 elseif (X1Select == 3)
-   X1 = imread('C:\Alpha\Image\SearchNeighborhood.jpg');
+   X1 = imread(strcat(ImageDir,'SearchNeighborhood.jpg'));
    MyPlotName = 'SearchNeighborhood';
 elseif (X1Select == 4)
-   X1 = imread('C:\Alpha\Image\DetectedImagePoint.jpg');
+   X1 = imread(strcat(ImageDir,'DetectedImagePoint.jpg'));
    MyPlotName = 'DetectedImagePoint';
 end
 hold on

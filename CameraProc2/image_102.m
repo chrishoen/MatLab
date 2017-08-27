@@ -7,7 +7,7 @@ com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER')
 set(0,'DefaultFigureWindowStyle','docked')
 
 X1Select = 4;
-ImageDir = 'C:\IMAGE\Image_79\'
+ImageDir = 'C:\IMAGE\Image_sony4\'
 
 if     (X1Select == 1)
    X1 = imread(strcat(ImageDir,'CapturedImage.jpg'));

@@ -22,7 +22,8 @@ x= 0:1:701;
 %Z= A0.*X.^2+A1.*Y.^2+A2.*X.*Y+A3.*X+A4.*Y+A5;
 SearchNeighborhood = imread('C:\Alpha\Image\SearchNeighborhood.png');
 
-MaxZ= MaxValue + 20;
+MaxZ= MaxValue + 40;
+MaxZ = 256;
 z = 0:1:MaxZ;
 axmin= CenterX+1 - 30;
 axmax= CenterX+1 + 30;

@@ -8,7 +8,7 @@ set(0,'DefaultFigureWindowStyle','docked')
 
 %*******************************************
 
-%[A0,A1,A2,A3,A4,A5] = textread('C:\Alpha\Log\CoefficientsLog.txt','%f %f %f %f %f %f');
+[A0,A1,A2,A3,A4,A5] = textread('C:\Alpha\Log\CoefficientsLog.txt','%f %f %f %f %f %f');
 CenterVec  =textread('C:\Alpha\Log\PointCenterLog.txt', '%f');
 CenterX= CenterVec(1);
 CenterY= CenterVec(2);
@@ -18,10 +18,11 @@ MaxValue= CenterVec(3);
 %Initialize grid and function
 x= 0:1:701;
 [X,Y]= meshgrid(x);
-%Z= A0.*X.^2+A1.*Y.^2+A2.*X.*Y+A3.*X+A4.*Y+A5;
+Z= A0.*X.^2+A1.*Y.^2+A2.*X.*Y+A3.*X+A4.*Y+A5;
 SearchNeighborhood = imread('C:\Alpha\Image\SearchNeighborhood.png');
 
 MaxZ= MaxValue + 20;
+MaxZ=256;
 z = 0:1:MaxZ;
 axmin= CenterX+1 - 30;
 axmax= CenterX+1 + 30;
@@ -69,7 +70,7 @@ if( selection == 'Display2')
     set(gca, 'XTick',axmin:10:axmax)
     set(gca, 'YTick',aymin:10:aymax)
     %set view orthogonal to z-axis
-    az = 90;
+    az = 45;
     el = 0;
     view(az, el);
 

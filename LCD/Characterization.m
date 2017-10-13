@@ -7,8 +7,8 @@ com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER')
 set(0,'DefaultFigureWindowStyle','docked')
 
 %Intialize Blank Grid
-row = 1:640;
-col = 1:480;
+row = 1:480;
+col = 1:640;
 
 [R,C]= meshgrid(row,col);
 Z= zeros(size(R));
@@ -19,8 +19,7 @@ surf(Z);
 
 %Import Txt files
 RowColLog   = textread('C:\Alpha\Log\RowColLog.txt');
-MaxValueLog = textread('C:\Alpha\Log\MaxValueLog.txt');
-
+MaxValueLog = textread('C:\Alpha\Log\MaxValueLog.txt','','delimiter',',');
 %Get table Dimensions
 [RowColLogN,RowColLogM] = size(RowColLog);
 [MaxValueLogN,MaxValueLogM] = size(RowColLog);

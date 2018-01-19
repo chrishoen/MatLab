@@ -1,5 +1,5 @@
 %***********************************************************BEGIN
-function Polynomial(selection)
+function Polynomial(selection, coefficients)
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
@@ -7,8 +7,10 @@ set(0,'DefaultFigureWindowStyle','docked')
 
 
 %*******************************************
-
-[A0,A1,A2,A3,A4,A5] = textread('C:\Alpha\Log\CoefficientsLog.txt','%f %f %f %f %f %f');
+if(coefficients=="ON")
+    [A0,A1,A2,A3,A4,A5] = textread('C:\Alpha\Log\CoefficientsLog.txt','%f %f %f %f %f %f');
+    Z= A0.*X.^2+A1.*Y.^2+A2.*X.*Y+A3.*X+A4.*Y+A5;
+end
 CenterVec  =textread('C:\Alpha\Log\PointCenterLog.txt', '%f');
 CenterX= CenterVec(1);
 CenterY= CenterVec(2);
@@ -18,7 +20,6 @@ MaxValue= CenterVec(3);
 %Initialize grid and function
 x= 0:1:701;
 [X,Y]= meshgrid(x);
-Z= A0.*X.^2+A1.*Y.^2+A2.*X.*Y+A3.*X+A4.*Y+A5;
 SearchNeighborhood = imread('C:\Alpha\Image\SearchNeighborhood.png');
 
 MaxZ= MaxValue + 20;
@@ -29,7 +30,7 @@ axmax= CenterX+1 + 30;
 aymin= CenterY+1 - 30;
 aymax= CenterY+1 + 30;
 
-if(selection == 'Display')
+if(selection == 'Display0')
     MyPlotName = 'SearchNeighborhoodRaw';
     figure('Name',MyPlotName,'NumberTitle','off');
     hold on
@@ -54,7 +55,7 @@ if( selection == 'Display1')
     set(gca, 'ZTick',0:10000:MaxZ)
     set(gca, 'XTick',axmin:10:axmax)
     set(gca, 'YTick',aymin:10:aymax)
-    set view orthogonal to z-axis
+    %set view orthogonal to z-axis
     az = 90;
     el = 0;
     view(az, el);

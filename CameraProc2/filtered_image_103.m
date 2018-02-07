@@ -15,12 +15,12 @@ rotate3d on
 
 figure('Name',MyPlotName,'NumberTitle','off');
 
-xc = 2448/2;
-yc = 2048/2;
+rowy = 1016;
+colx = 1216;
 b = 100;
 
-X2 = X1(yc-b:yc+b,xc-b:xc+b);
-X3 = X2(101,:);
+X2 = X1(rowy-b:rowy+b,colx-b:colx+b);
+X3 = X1(rowy-b:rowy+b,colx:colx);
 
 
 %contour3(X1)

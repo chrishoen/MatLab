@@ -2,7 +2,7 @@ function Plot_FilteredImagePoints
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 
-x1 = load('C:\Alpha\Log\FilteredGridSensorImagePoints.csv');
+x1 = load('C:\Alpha\Log\FilteredImage.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
 figure('Name','FilteredImagePoints','NumberTitle','off')

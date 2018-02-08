@@ -23,9 +23,9 @@ X2 = X1(rowy-b:rowy+b,colx-b:colx+b);
 X3 = X1(rowy-b:rowy+b,colx:colx);
 
 
-%contour3(X1)
+%contour3(X2)
 %mesh(X2)
-plot(X3)
+%plot(X2)
 %stem3(X3)
 stem(X3)
 return

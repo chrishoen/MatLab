@@ -1,5 +1,5 @@
 %***********************************************************BEGIN
-function pulse_plot()
+function pulse_plot_201()
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 

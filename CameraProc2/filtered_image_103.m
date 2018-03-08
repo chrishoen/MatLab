@@ -17,6 +17,8 @@ figure('Name',MyPlotName,'NumberTitle','off');
 
 rowy = 1032+1;
 colx = 1232+1;
+rowy = 1256+1;
+colx = 1011+1;
 b = 100;
 
 X2 = X1(rowy-b:rowy+b,colx-b:colx+b);

@@ -1,15 +1,22 @@
 function plot_history
 
+com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
+set(0,'DefaultFigureWindowStyle','docked')
+
+%*******************************************
 x = load('C:\Alpha\Data\SignalHistory.csv');
-figure 
+
+MyPlotName = 'SignalHistory';
+figure('Name',MyPlotName,'NumberTitle','off'); 
 hold on
+
+%*******************************************
+
 plot(x(:,2),x(:,3));
-plot(x(:,2),x(:,4));
-%axis([1.0 1.2 -10.0 10.0])
 axis([0 inf -10.0 10.0])
+
 h=zoom;
 set(h,'Motion','horizontal','Enable','on');
-
 
 return
 

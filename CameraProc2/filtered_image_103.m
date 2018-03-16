@@ -6,7 +6,7 @@ com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER')
 %*******************************************
 set(0,'DefaultFigureWindowStyle','docked')
 
-X1 = imread('C:\Alpha\Image\FilteredImage.png');
+X1 = imread('C:\Alpha\Image2\FilteredImage.png');
 MyPlotName = 'FilteredImage';
 hold on
 rotate3d on

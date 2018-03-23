@@ -21,7 +21,7 @@ hold on
 plot(sp1,x1(:,2),xz)
 plot(sp1,x1(:,2),x1(:,3))
 axis(sp1,ta1)
-title('XX Input')
+title('XX')
 xlabel('Time (sec)')
 ylabel('(units)')
 
@@ -30,7 +30,7 @@ hold on
 plot(sp2,x1(:,2),xz)
 plot(sp2,x1(:,2),x1(:,4))
 axis(sp2,ta2)
-title('XV Estimate')
+title('XV')
 xlabel('Time (sec)')
 ylabel('(units)')
 

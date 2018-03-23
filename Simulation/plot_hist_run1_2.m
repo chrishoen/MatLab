@@ -9,10 +9,7 @@ figure('Name','plot_hist_run1_2','NumberTitle','off')
 hold on
 
 
-ta1=[0 inf -2 2];
-ta2=[0 inf -2 2];
-ta3=[0 inf -2 2];
-ta4=[0 inf -2 2];
+ta1=[0 inf  0  1];
 
 xz = zeros([1 size(x1(:,1))]);
 

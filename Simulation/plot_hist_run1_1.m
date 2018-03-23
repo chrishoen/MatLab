@@ -5,14 +5,13 @@ com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER')
 x1 = load('C:\Alpha\Data\SignalHistory1.csv');
 
 set(0,'DefaultFigureWindowStyle','docked')
-figure('Name','plot_hist_run1_2','NumberTitle','off')
+figure('Name','plot_hist_run1_1','NumberTitle','off')
 hold on
 
 
-ta1=[0 inf -2 2];
-ta2=[0 inf -2 2];
-ta3=[0 inf -2 2];
-ta4=[0 inf -2 2];
+ta1=[0 inf  0  1];
+ta2=[0 inf -1  1];
+ta3=[0 inf -1  1];
 
 xz = zeros([1 size(x1(:,1))]);
 
@@ -40,7 +39,7 @@ plot(sp3,x1(:,2),xz)
 plot(sp3,x1(:,2),x1(:,3))
 plot(sp3,x1(:,2),x1(:,4))
 axis(sp3,ta3)
-title('XX+XV')
+title('XX,XV')
 xlabel('Time (sec)')
 ylabel('(units/sec)')
 

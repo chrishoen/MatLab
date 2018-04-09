@@ -15,8 +15,10 @@ rotate3d on
 
 figure('Name',MyPlotName,'NumberTitle','off');
 
-rowy = 1016+1;
-colx = 1216+1;
+rowy = 1014+1;
+colx = 1263+1;
+rowy = 1011+1;
+colx = 1256+1;
 b = 100;
 
 X2 = X1(rowy-b:rowy+b,colx-b:colx+b);

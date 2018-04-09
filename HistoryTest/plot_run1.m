@@ -1,4 +1,4 @@
-function plot_history
+function plot_run1
 
 com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER');
 set(0,'DefaultFigureWindowStyle','docked')
@@ -6,7 +6,7 @@ set(0,'DefaultFigureWindowStyle','docked')
 %*******************************************
 x = load('C:\Alpha\Data\SignalHistory.csv');
 
-MyPlotName = 'SignalHistory';
+MyPlotName = 'plot_run1';
 figure('Name',MyPlotName,'NumberTitle','off'); 
 hold on
 

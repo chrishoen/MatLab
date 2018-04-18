@@ -4,7 +4,7 @@ com.mathworks.mlwidgets.html.HtmlComponentFactory.setDefaultType('HTMLRENDERER')
 set(0,'DefaultFigureWindowStyle','docked')
 
 %*******************************************
-x = load('C:\Alpha\Data\SignalHistory.csv');
+x = load('C:\Alpha\Data\SignalHistory1.csv');
 
 MyPlotName = 'SignalHistory';
 figure('Name',MyPlotName,'NumberTitle','off'); 

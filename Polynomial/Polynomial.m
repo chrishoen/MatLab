@@ -23,9 +23,9 @@ x= 0:1:701;
 [X,Y]= meshgrid(x);
 SearchNeighborhood = imread('C:\Alpha\Image\SearchNeighborhood.png');
 
-MaxZ= MaxValue + 20;
+MaxZ= MaxValue;
 MaxZ= 65536;
-z = 0.75*MaxZ:10:MaxZ;
+z = 0.20*MaxZ:10:MaxZ;
 axmin= CenterX+1 - 30;
 axmax= CenterX+1 + 30;
 aymin= CenterY+1 - 30;
